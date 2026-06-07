@@ -1,0 +1,383 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ========================= */
+/* SCROLL OFFSET */
+/* ========================= */
+
+section,
+header{
+    scroll-margin-top:80px;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#DCEBFF;
+    color:#032B73;
+    min-height:100vh;
+    padding-top:70px;
+
+    opacity:0;
+    transform:scale(1.02);
+    animation:pageLoad 1s ease forwards;
+}
+
+@keyframes pageLoad{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ========================= */
+/* CONTENEDOR */
+/* ========================= */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar{
+    width:100%;
+    height:70px;
+
+    background:rgba(3,43,115,.95);
+    backdrop-filter:blur(12px);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 50px;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.25);
+
+    animation:slideDown .8s ease;
+}
+
+@keyframes slideDown{
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(0);
+    }
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.logo:hover{
+    transform:scale(1.08);
+}
+
+.logo img{
+    height:40px;
+    width:auto;
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu li{
+    list-style:none;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+
+    padding:10px 18px;
+    border-radius:10px;
+
+    transition:.35s ease;
+}
+
+.menu a:hover{
+    background:#1E81F6;
+    color:white;
+    transform:translateY(-2px);
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header{
+    background:linear-gradient(
+        135deg,
+        #032B73,
+        #0A58CA
+    );
+
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+
+    animation:fadeUp 1s ease;
+}
+
+.header h1{
+    font-size:clamp(1.8rem,5vw,3rem);
+    margin-bottom:15px;
+}
+
+.header p{
+    font-size:1.1rem;
+}
+
+/* ========================= */
+/* SECCIONES */
+/* ========================= */
+
+section{
+    padding:60px 0;
+}
+
+/* ========================= */
+/* TITULOS */
+/* ========================= */
+
+h2{
+    text-align:center;
+    margin-bottom:35px;
+
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
+.card{
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 10px 25px rgba(3,43,115,.10);
+
+    transition:.45s ease;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 20px 40px rgba(10,88,202,.25);
+}
+
+/* EFECTO BRILLO */
+
+.card::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+    transition:.8s;
+}
+
+.card:hover::before{
+    left:100%;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-title{
+    color:#032B73;
+    margin-bottom:12px;
+}
+
+.card-text{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+/* ========================= */
+/* BOTON */
+/* ========================= */
+
+.btn{
+    display:inline-block;
+
+    padding:12px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0A58CA,
+        #1E81F6
+    );
+
+    color:white;
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(30,129,246,.35);
+}
+
+/* ========================= */
+/* OBJETIVO */
+/* ========================= */
+
+.objetivo{
+    background:#0A58CA;
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+    background:#032B73;
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+
+        height:auto;
+
+        padding:15px;
+
+        gap:10px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .menu a{
+        font-size:14px;
+    }
+
+    .header{
+        padding:60px 15px;
+    }
+}
+
+@media(max-width:480px){
+
+    .card-body{
+        padding:15px;
+    }
+
+    .header h1{
+        font-size:1.8rem;
+    }
+
+    .header p{
+        font-size:.95rem;
+    }
+}
